@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman Test</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { background: #87CEEB; } /* 添加临时背景色 */
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <script>
+    // ===== 极简测试代码 =====
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 1. 设置Canvas尺寸
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 2. 绘制测试图形
+    ctx.fillStyle = 'green';
+    ctx.fillRect(50, 50, 100, 100);
+    
+    // 3. 加载精灵图
+    const img = new Image();
+    img.src = './stickman_sprite.png';
+    
+    // 4. 成功/失败提示
+    img.onload = () => {
+      ctx.fillStyle = 'blue';
+      ctx.fillText('图片加载成功!', 50, 200);
+      ctx.drawImage(img, 50, 250, 100, 100);
+    };
+    
+    img.onerror = () => {
+      ctx.fillStyle = 'red';
+      ctx.fillText('图片加载失败!', 50, 200);
+    };
+  </script>
+</body>
+</html>
