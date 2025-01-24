@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman Game</title>
+  <style>
+    canvas { display: block; margin: auto; background: #f0f0f0; }
+    body { margin: 0; overflow: hidden; }
+    .controls { position: fixed; bottom: 10px; width: 100%; display: flex; justify-content: space-around; }
+    .button { background: #333; color: white; padding: 10px; border: none; font-size: 18px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <div class="controls">
+    <div>
+      <button class="button" onclick="move('up')">↑</button><br>
+      <button class="button" onclick="move('left')">←</button>
+      <button class="button" onclick="move('down')">↓</button>
+      <button class="button" onclick="move('right')">→</button>
+    </div>
+    <div>
+      <button class="button" onclick="attack('punch')">Punch</button>
+      <button class="button" onclick="attack('kick')">Kick</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
